@@ -1,16 +1,27 @@
-# dashboard_app
+# 📊 Flutter Analytics Dashboard (Web)
 
-A new Flutter project.
+A responsive, Firebase-authenticated analytics dashboard built using **Flutter Web**.
+This project visualizes CSV-based data interactively, allowing filters by Site,
+Individual, and Date — perfect for monitoring performance metrics.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 🚀 Live Demo
 
-A few resources to get you started if this is your first Flutter project:
+🌐 **Hosted at:** [https://flutterdashboardweb-2b10e.web.app]
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🎯 Features
+
+- ✅ Firebase Email/Password Authentication
+- ✅ Upload and Parse Local CSV Files
+- ✅ Dynamic Filtering (Site, Individual, Date)
+- ✅ Beautiful Chart Visualizations using `fl_chart`
+- ✅ Responsive Grid Layout (Mobile + Web)
+- ✅ Themed with your brand colors
+- ✅ Hosted using Firebase Hosting
+
+---
+
+
