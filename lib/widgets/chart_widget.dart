@@ -33,13 +33,21 @@ class ChartWidget extends StatelessWidget {
       child: Card(
         key: ValueKey(title + data.length.toString()),
         elevation: 6,
+        color: Colors.white,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         child: Padding(
           padding: const EdgeInsets.all(24),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Text(title, style: Theme.of(context).textTheme.titleMedium),
+              Text(
+                title,
+                style: TextStyle(
+                  fontSize: 20,
+                  color: const Color(0xFF011638),
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
               const SizedBox(height: 16),
               SizedBox(
                 height: 320,
@@ -52,12 +60,15 @@ class ChartWidget extends StatelessWidget {
                       leftTitles: AxisTitles(
                         sideTitles: SideTitles(
                           showTitles: true,
-                          reservedSize: 48,
+                          reservedSize: 40,
                           getTitlesWidget: (value, _) => Padding(
                             padding: const EdgeInsets.only(right: 4),
                             child: Text(
-                              '${(value / 1000).toStringAsFixed(1)}K',
-                              style: const TextStyle(fontSize: 10),
+                              value.toStringAsFixed(0),
+                              style: const TextStyle(
+                                fontSize: 10,
+                                color: Color(0xFF011638),
+                              ),
                             ),
                           ),
                         ),
@@ -67,31 +78,38 @@ class ChartWidget extends StatelessWidget {
                           showTitles: true,
                           getTitlesWidget: (value, _) => Padding(
                             padding: const EdgeInsets.only(top: 4),
-                            child: Text('${value.toInt()}h',
-                                style: const TextStyle(fontSize: 10)),
+                            child: Text(
+                              '${value.toInt()}h',
+                              style: const TextStyle(
+                                fontSize: 10,
+                                color: Color(0xFF011638),
+                              ),
+                            ),
                           ),
                         ),
                       ),
-                      topTitles:
-                          AxisTitles(sideTitles: SideTitles(showTitles: false)),
-                      rightTitles:
-                          AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                      topTitles: AxisTitles(
+                          sideTitles: SideTitles(showTitles: false)),
+                      rightTitles: AxisTitles(
+                          sideTitles: SideTitles(showTitles: false)),
                     ),
                     barGroups: sorted
                         .map((e) => BarChartGroupData(
-                              x: e.key,
-                              barRods: [
-                                BarChartRodData(
-                                  toY: e.value,
-                                  width: 18,
-                                  color: isA ? Colors.teal : Colors.deepPurple,
-                                  borderRadius: const BorderRadius.only(
-                                    topLeft: Radius.circular(10),
-                                    topRight: Radius.circular(10),
-                                  ),
-                                )
-                              ],
-                            ))
+                      x: e.key,
+                      barRods: [
+                        BarChartRodData(
+                          toY: e.value,
+                          width: 18,
+                          color: isA
+                              ? const Color(0xFF3EB1C8)
+                              : const Color(0xFFEFCC6C),
+                          borderRadius: const BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                            topRight: Radius.circular(10),
+                          ),
+                        )
+                      ],
+                    ))
                         .toList(),
                   ),
                   swapAnimationDuration: const Duration(milliseconds: 400),
